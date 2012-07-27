@@ -1,0 +1,8 @@
+<div class="post full">
+<% for photo in post.photos %>
+  <%= image_tag photo.data.url(:large), :alt => "" %>
+<% end %>
+<%= post.body %>
+<%= post.extended %>
+<%= link_to 'Link' , post_path(post) %>
+</div>

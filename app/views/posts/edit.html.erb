@@ -1,0 +1,44 @@
+<h1>Editing post</h1>
+
+<% form_for(@post) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :extended %><br />
+    <%= f.text_area :extended %>
+  </p>
+  <p>
+    <%= f.label :category_id %><br />
+    <%= f.text_field :category_id %>
+  </p>
+  <p>
+    <%= f.label :created_at %><br />
+    <%= f.datetime_select :created_at %>
+  </p>
+  <p>
+    <%= f.label :updated_at %><br />
+    <%= f.datetime_select :updated_at %>
+  </p>
+
+	<% @post.photos.each do | photo | %>
+  <p>
+    <%= image_tag(photo.data.url(:small), :alt => '') %>
+    <%= check_box_tag "photo_ids[]", photo.id %>
+  </p>
+	<% end unless @album.photos.first.new_record? rescue nil %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %>

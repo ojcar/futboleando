@@ -1,0 +1,21 @@
+<% content_for(:page_title) do %><%=h @post.title %><% end -%>
+<% content_for(:header_title) do %>
+	<span class="title"><%= @post.category.displayname %></span>
+<% end %>
+
+
+
+<div class="span-18 append-3 prepend-3 inside">
+	<h1><%= @post.title %></h1>
+</div>
+<div class="span-12 append-6 prepend-6">
+	<%= render :partial => 'postfull', :locals => { :post => @post } %>
+</div>
+
+<div class="span-18 append-3 prepend-3 inside">
+	<h2><%= @post.day %> &bull; <%= disqus_comment_counts %></h2>
+</div>
+
+<div class="span-12 append-6 prepend-6">
+<%= disqus_thread %>
+</div>

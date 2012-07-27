@@ -1,0 +1,101 @@
+/* header */
+.header {
+	height: 80px;
+	background: url('../images/player2.gif') bottom left no-repeat;
+	padding-left: 60px;
+}
+
+.title {
+	font-family: helvetica,arial,sans-serif;
+	font-size: 42px;
+	line-height: 135px;
+	color: #fff;
+	font-weight: bolder;
+}
+.title h1 {
+	height: 40px;
+	font-family: helvetica,arial,sans-serif;
+	font-size: 42px;
+	color: #fff;
+	font-weight: bolder;
+}
+
+.smalltextarea, .largetextarea {
+	width: 250px;
+}
+
+.smalltextarea {
+	height: 80px;
+}
+
+.largetextarea {
+	height: 120px;
+}
+
+
+/* post formatting */
+.date {
+	color: #fff;
+	background-color: #f00;
+	font-size: 11px;
+	display: inline;
+	padding: 2px;
+	font-family: georgia, serif;
+	font-weight: bold;
+}
+
+.post {
+	margin-top: 10px;
+	margin-bottom: 15px;
+	padding-bottom: 5px;
+}
+
+.post p {
+	margin-bottom: 2px;
+}
+
+.post h2 {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.post a:link, .post a:visited {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #f00;
+}
+
+.inside {
+	text-align: center;
+}
+
+.inside h1 {
+	font-family:georgia,times,"times new roman",serif;
+	font-size:40px;
+	line-height:45px;
+	margin:0;
+	padding-top:10px;
+}
+
+.full img {
+	text-align: center;
+}
+
+.menu h2 {
+	display: inline;
+	margin-right: 0.5em;
+}
+
+/* form errors */
+
+.hilite {
+	color: #f00;
+	font-size: 14px;
+	font-family: georgia, sans-serif;
+	font-weight: bold;
+}
+
+.error {
+	background: #ffc;
+	border: 2px solid red;
+}

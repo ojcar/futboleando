@@ -1,0 +1,80 @@
+
+
+    <div class="span-24">
+
+		<div class="span-4">
+			<% unless @posts1.empty?%>
+				<% @posts1.group_by(&:day).each do |day, posts| %>
+				<h3><span class="date"><%= day %></span></h3>
+				<%= render :partial => "post", :collection => posts %>
+				
+				<% end %>
+			<% else %>
+				<%= render :partial => "nothing" -%>
+			<% end %>
+		</div>
+		
+		<div class="span-4">
+			<% unless @posts2.empty?%>
+				<% @posts2.group_by(&:day).each do |day, posts| %>
+				<h3><span class="date"><%= day %></span></h3>
+				<%= render :partial => "post", :collection => posts %>
+				<% end %>
+			<% else %>
+				<%= render :partial => "nothing" -%>
+			<% end %>
+		</div>
+		
+		<div class="span-4">
+			<% unless @posts3.empty?%>
+				<% @posts3.group_by(&:day).each do |day, posts| %>
+				<h3><span class="date"><%= day %></span></h3>
+				<%= render :partial => "post", :collection => posts %>
+				<% end %>
+			<% else %>
+				<%= render :partial => "nothing" -%>
+			<% end %>
+		</div>
+		
+		<div class="span-4">
+			<% unless @posts4.empty?%>
+				<% @posts4.group_by(&:day).each do |day, posts| %>
+				<h3><span class="date"><%= day %></span></h3>
+				<%= render :partial => "post", :collection => posts %>
+				<% end %>
+			<% else %>
+				<%= render :partial => "nothing" -%>
+			<% end %>
+		</div>
+		
+		<div class="span-4">
+			<% unless @posts5.empty?%>
+				<% @posts5.group_by(&:day).each do |day, posts| %>
+				<h3><span class="date"><%= day %></span></h3>
+				<%= render :partial => "post", :collection => posts %>
+				<% end %>
+			<% else %>
+				<%= render :partial => "nothing" -%>
+			<% end %>
+		</div>
+		
+		<div class="span-4 last">
+			<% unless @posts6.empty?%>
+				<% @posts6.group_by(&:day).each do |day, posts| %>
+				<h3><span class="date"><%= day %></span></h3>
+				<%= render :partial => "post", :collection => posts %>
+				<% end %>
+			<% else %>
+				<%= render :partial => "nothing" -%>
+			<% end %>
+		</div>
+
+    </div>
+
+
+	<div class="span-24 menu">
+		<h2>Lo que hay:</h2>
+		<% @categories.each do |category| %>
+		<h2><%= link_to category.displayname, show_category_url(category.name) %></h2>
+		<% end %>
+	</div>

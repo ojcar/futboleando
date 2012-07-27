@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= yield(:page_title) || 'futboleando.com'%></title>
+  <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag 'main' %>
+  <%= stylesheet_link_tag 'screen', :media => "screen,projection" %>
+  <%= stylesheet_link_tag 'print', :media => "print" %>  
+  <!--[if lt IE 8]><link rel="stylesheet" href="stylesheets/ie.css" type="text/css" media="screen, projection"><![endif]-->
+</head>
+<body>
+
+
+	<div class="container">
+		<div class="span-24 header"><%= yield(:header_title) || '' %></div>
+		<div class="span-24"><p style="color: red"><%= flash[:notice] %></p></div>
+
+<%= yield %>
+
+
+
+
+    <div class="span-24">
+		<%= link_to 'futboleando.net', root_url %>
+		<% if logged_in? %>
+			 | <%= self.current_user.login %>  <%= link_to 'New post', new_post_path %> / <%= link_to 'Logout', logout_url %>
+		<% else %>
+			<%= link_to 'Login', login_url %>
+		<% end %>
+		<p>Una lista de cosas que pasan en el f&uacute;tbol, sin pretensi&oacute;n de acceso, sin ser los due&ntilde;os de la pelota. S&oacute;lo pegados de la tele confiando en que el equipo gane. Cada columna una liga. S&oacute;lo las ligas que me gustan. Comentarios sobre el sitio a futboleando arroba blogactivo punto com. </p>
+		<p>Una producci&oacute;n de <a href="http://santamaradona.org/">Santa Maradona</a></p>
+		<p>El &iacute;cono del moreno jugador de f&uacute;tbol que aparece en el logo es tomado de la internet: <a href="http://www.pixeljoint.com/pixelart/1556.htm">pixeljoint</a></p>
+    </div>
+</div>
+</body>
+</html>
+
+
+

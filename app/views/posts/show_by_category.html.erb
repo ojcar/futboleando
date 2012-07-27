@@ -1,0 +1,7 @@
+<div class="span-24 title">
+	<h1><%= @category.name %></h1>
+</div>
+
+<%= render :partial => "post", :collection => @posts %>
+
+<%= will_paginate @posts %>
